@@ -6,7 +6,7 @@ function Student({name,positionDetail}) {
         <div className="wrap">
           <div className="cover">
             <span className="text">H</span>
-            <img src="img/thumb-member.jpg" alt="" />
+            <img src="/img/thumb-member.jpg" alt="" />
           </div>
           <div className="info">
             <div className="name">

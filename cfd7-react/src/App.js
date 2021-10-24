@@ -11,25 +11,39 @@ import Projects from "./pages/Projects/index.jsx";
 import Register from "./pages/Register/index.jsx";
 import Pay from "./pages/Pay/index.jsx";
 import Team from "./pages/Team/index.jsx";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
+import './assets/custom.css'
 
 function App() {
   return (
     <div className="App">
+      <Router>
       <Header/>
       <Nav/>
-      {/* <Home/> */}
-      {/* <Page404/> */}
-      {/* <CourseDetail /> */}
-      {/* <FaQ /> */}
-      {/* <IntroduceCoin /> */}
-      {/* <Cooperation /> */}
-      {/* <Courses/> */}
-      {/* <Profile /> */}
-      {/* <Projects /> */}
-      {/* <Register /> */}
-      {/* <Pay /> */}
-      <Team />
+
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/khoa-hoc/:slug" component={CourseDetail} />
+        <Route path="/faq" component={FaQ} />
+        <Route path="/coin" component={IntroduceCoin} />
+        <Route path="/hop-tac" component={Cooperation} />
+        <Route path="/khoa-hoc" component={Courses} />
+        <Route path="/thong-tin-ca-nhan" component={Profile} />
+        <Route path="/du-an" component={Projects} />
+        <Route path="/dang-ki" component={Register} />
+        <Route path="/thanh-toan" component={Pay} />
+        <Route path="/team" component={Team} />
+        <Route  component={Page404} />
+      </Switch>
       <Footer/>
+      </Router>
+      
     </div>
   );
 }

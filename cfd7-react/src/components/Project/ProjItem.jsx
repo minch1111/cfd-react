@@ -1,8 +1,9 @@
 import React from 'react'
+import{Link} from"react-router-dom"
 
-function ProjItem({name,description,teacher,img}) {
+function ProjItem({name,description,teacher,img,slug}) {
     return (
-        <div className="col-md-4 course">
+        <Link to={`/khoa-hoc/${slug}`} className="col-md-4 course">
                 <div className="wrap">
                   <a href="#" className="cover">
                     <img src={img} alt="" />
@@ -18,14 +19,14 @@ function ProjItem({name,description,teacher,img}) {
                   <div className="bottom">
                     <div className="teacher">
                       <div className="avatar">
-                        <img src="img/avt.png" alt="" />
+                        <img src="/img/avt.png" alt="" />
                       </div>
                       <div className="name">{teacher}</div>
                     </div>
-                    <div className="register-btn">Đăng Ký</div>
+                    <Link to="/dang-ki" className="register-btn">Đăng Ký</Link>
                   </div>
                 </div>
-              </div>
+              </Link>
     )
 }
 

@@ -5,7 +5,7 @@ function ProjDone({name,description,teacher}) {
         <div className="col-md-6 course">
                       <div className="wrap">
                         <a href="#" className="cover">
-                          <img src="img/img8.png" alt="" />
+                          <img src="/img/img8.png" alt="" />
                         </a>
                         <div className="info">
                           <a href="#" className="name">

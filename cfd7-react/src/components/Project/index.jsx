@@ -17,6 +17,7 @@ function Project(props) {
                         description ={value.description}
                         teacher = {value.teacher}    
                         img={value.img}
+                        slug={value.slug}
                     />
                   ))
               }

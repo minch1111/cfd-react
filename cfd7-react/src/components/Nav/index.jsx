@@ -1,34 +1,45 @@
+import { Switch } from "react-router";
+import { NavLink } from "react-router-dom";
 
 export function Nav() {
-    return (
-        <>
-            <nav className="nav">
-          <ul>
-            <li className="li_login">
-              <a href="#">Đăng nhập</a>
-              <a href="#">Đăng ký</a>
-            </li>
-            <li className="active">
-              <a href="#">Trang chủ</a>
-            </li>
-            <li>
-              <a href="#">CFD Team</a>
-            </li>
-            <li>
-              <a href="#">Khóa Học</a>
-            </li>
-            <li>
-              <a href="#">Dự Án</a>
-            </li>
-            <li>
-              <a href="#">Liên hệ</a>
-            </li>
-          </ul>
-        </nav>
-        <div className="overlay_nav" />
-      </>
-        
-    )
+  const showNav = () => {
+
+    document.querySelector("body").classList.toggle("menu-is-show")
+
+  }
+
+  return (
+    <>
+      <nav className="nav">
+        <ul>
+          <li className="li_login">
+            <a href="#">Đăng nhập</a>
+            <a href="#">Đăng ký</a>
+          </li>
+
+          <li className="active">
+            <NavLink to="/" onClick={showNav}>Trang chủ</NavLink>
+          </li>
+          <li>
+            <NavLink to="/team" onClick={showNav}>CFD Team</NavLink>
+          </li>
+          <li>
+            <NavLink to="/khoa-hoc" onClick={showNav}>Khóa Học</NavLink>
+          </li>
+          <li>
+            <NavLink to="/du-an" onClick={showNav}>Dự Án</NavLink>
+          </li>
+          <li>
+            <NavLink to="/hop-tac" onClick={showNav}>Liên hệ</NavLink>
+          </li>
+
+
+        </ul>
+      </nav>
+      <div className="overlay_nav" />
+    </>
+
+  )
 }
 
 

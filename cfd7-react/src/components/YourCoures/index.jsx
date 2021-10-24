@@ -24,7 +24,7 @@ function YourCourses({name,date,time,videos,students,img,process,status}) {
                       </div>
                       <div className="process">
                         <div className="line">
-                          <div className="rate" style={{width: {process}}} />
+                          <div className="rate" style={{width:{process}}} />
                         </div>
                         {process}
                       </div>
