@@ -23,7 +23,7 @@ function ProjItem({name,description,teacher,img,slug}) {
                       </div>
                       <div className="name">{teacher}</div>
                     </div>
-                    <Link to="/dang-ki" className="register-btn">Đăng Ký</Link>
+                    <Link to={`/dang-ki/${slug}`} className="register-btn">Đăng Ký</Link>
                   </div>
                 </div>
               </Link>

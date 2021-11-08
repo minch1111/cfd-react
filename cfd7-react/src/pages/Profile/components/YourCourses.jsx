@@ -5,8 +5,9 @@ function YourCourse(props) {
     return (
         <div className="tab2">
                 {
-                  props.urCourses.map((value) => (
+                  props.urCourses.map((value,key) => (
                     <YourCourses
+                      key={key}
                       name={value.name}
                       date={value.date}
                       time={value.time}

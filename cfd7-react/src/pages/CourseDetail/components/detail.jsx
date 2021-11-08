@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Detail() {
+function Detail({data}) {
     return (
         <section className="section-2">
         <div className="container">
@@ -92,27 +92,20 @@ function Detail() {
             <div className="sub">*Lịch học và thời gian có thể thống nhất lại theo số đông học viên.</div>
           </h3>
           <p>
-            <strong>Ngày bắt đầu: </strong> 09/09/2020 <br />
-            <strong>Thời gian học: </strong> Thứ 3 từ 18h45-21h45, Thứ 7 từ 12h-15h, Chủ nhật từ 15h-18h
+            <strong>Ngày bắt đầu: </strong> {data?.opening_time} <br />
+            <strong>Thời gian học: </strong> {data?.schedule}
           </p>
           <h3 className="title">Người dạy</h3>
           <div className="teaches">
             <div className="teacher">
               <div className="avatar">
-                <img src="img/avatar-lg.png" alt="" />
+                <img src={data?.teacher?.avatar?.link} alt="" />
               </div>
               <div className="info">
-                <div className="name">TRẦN NGHĨA</div>
-                <div className="title">Founder CFD &amp; Creative Front-End Developer</div>
+                <div className="name">{data?.teacher?.title}</div>
+                <div className="title">{data?.teacher?.position}</div>
                 <p className="intro">
-                  My education, career, and even personal life have been molded by one simple principle;
-                  well
-                  designed information resonates with people and can change lives.I have a passion for
-                  making
-                  information resonate. It all starts with how people think. With how humans work. As
-                  humans
-                  we have learned how to read and write and while that is incredible, we are also already
-                  hard-wired to do some things a bit more "automatically"
+                  {data?.teacher?.description}
                 </p>
                 <p><strong>Website:</strong> <a href="#">http://nghiatran.info</a></p>
               </div>

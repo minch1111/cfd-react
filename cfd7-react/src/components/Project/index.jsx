@@ -1,23 +1,24 @@
 import React from 'react'
 import ProjItem from './ProjItem.jsx'
 
-function Project(props) {
+function Project({data,subtitle,maintitle}) {
     return (
         <section className="section-3">
           <div className="container">
             <div className="textbox">
-              <h3 className="sub-title">{props.subtitle}</h3>
-              <h2 className="main-title">{props.maintitle}</h2>
+              <h3 className="sub-title">{subtitle}</h3>
+              <h2 className="main-title">{maintitle}</h2>
             </div>
             <div className="list row">
               {
-                  props.data.map((value,key)=>(
+                  data.map((value,key)=>(
                     <ProjItem 
-                        name = {value.name}
-                        description ={value.description}
-                        teacher = {value.teacher}    
-                        img={value.img}
-                        slug={value.slug}
+                        key={key}
+                        name = {value?.title}
+                        description ={value?.short_description}
+                        teacher = {value?.teacher?.title}    
+                        img={value?.thumbnail?.link}
+                        slug={value?.slug}
                     />
                   ))
               }

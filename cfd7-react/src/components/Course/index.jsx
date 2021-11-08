@@ -7,7 +7,7 @@ function Courses(props) {
         <section className="section-courseoffline">
           <div className="container">
             {
-                  props.description &&
+                  props?.description &&
                   <p className="top-des">
                       {props.description}
                   </p>
@@ -18,14 +18,19 @@ function Courses(props) {
             </div>
             <div className="list row">
               {
+
+                  props.data?{...Array[9]}.map(()=>(<CourseItem loading={true} />)):
                   props.data.map((value,key)=>(
                       <CourseItem 
-                      name ={value.name}
-                      description={value.description}
-                      teacher = {value.teacher}
-                      status ={value.status}
-                      students={value.students}
-                      likes ={value.likes}
+                      key={key}
+                      name ={value?.title}
+                      description={value?.short_description}
+                      teacher = {value?.teacher.title}
+                      status ={value?.course_status}
+                      img={value?.thumbnail.link}
+                      // students={value.students}
+                      // likes ={value.likes}
+                      slug={value?.slug}
                       />
                   ))
               }

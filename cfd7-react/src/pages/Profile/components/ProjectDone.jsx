@@ -8,7 +8,7 @@ function ProjectDone(props) {
                   {
                     props.projDone.map((value, key) => (
                       <ProjDone
-
+                        key={key}
                         name={value.name}
                         description={value.description}
                         teacher={value.teacher}

@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import CoinHistory from './components/CoinHistory'
 import Payment from './components/Payment'
 import Form from './components/Form'
 import ProjectDone from './components/ProjectDone'
 import YourCourse from './components/YourCourses'
-import { Switch, Route, NavLink, useRouteMatch,Link } from 'react-router-dom'
+import { Switch, Route, NavLink, useRouteMatch, Link } from 'react-router-dom'
+import { Context } from '../../App'
+import { useSelector } from 'react-redux'
+import store from '../../store'
 
 function Profile() {
   var urCourses = [{
@@ -65,21 +68,24 @@ function Profile() {
 
   const { url } = useRouteMatch()
 
-  let handleCLick =(ev)=>{
+  let handleCLick = (ev) => {
     let href = ev.currentTarget.href
     console.log(href)
   }
-  console.log(`url`, url)
+  // console.log(`url`, url)
+
+  const { user } = useSelector(store=> store.auth);
+  // console.log(`avatar`, user.avatar)
   return (
     <main className="profile" id="main">
       <section>
         <div className="top-info">
           <div className="avatar">
             {/* <span class="text">H</span> */}
-            <img src="img/avatar-lg.png" alt="" />
+            <img src={ user?.avatar || user?.avatar?.link} alt="" />
             <div className="camera" />
           </div>
-          <div className="name">trần nghĩa</div>
+          <div className="name">{user.title || user?.name}</div>
           <p className="des">Thành viên của team CFD1-OFFLINE</p>
         </div>
         <div className="container">
@@ -91,10 +97,10 @@ function Profile() {
               <NavLink to={`${url}/lich-su-thanh-toan`}>Lịch sử thanh toán</NavLink>
               <NavLink to={`${url}/quan-li-coin`}>Quản lý COIN của tôi</NavLink>
             </div>
-            <div className="tab-content"> 
+            <div className="tab-content">
               <Switch>
                 <Route exact path={`${url}`} component={Form} />
-          
+
                 <Route path={`${url}/khoa-hoc-cua-ban`} >
                   <YourCourse
                     urCourses={urCourses}

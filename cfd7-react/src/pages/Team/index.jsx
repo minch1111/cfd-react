@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Student from '../../components/Students'
 import Teacher from '../../components/Teachers'
 
@@ -55,6 +55,7 @@ function Team() {
     },
     
 ]
+
     return (
         <main className="team" id="main">
         <section>

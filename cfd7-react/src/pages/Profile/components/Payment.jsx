@@ -7,6 +7,7 @@ function Payment(props) {
                   {
                       props.payHistory.map((value,key)=>(
                           <PayHistory 
+                          key={key}
                           name = {value.name}
                           date = {value.date}
                           cost = {value.cost}

@@ -6,10 +6,15 @@ import "./assets/dest/fonts.css";
 import "./assets/css/libs/flickity.css"
 import "./assets/css/libs/libs.css"
 import "./assets/dest/stylelibs.min.css"
+import { Provider } from 'react-redux';
+import store from "./store"
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
+    
   </React.StrictMode>,
   document.getElementById('root')
 );

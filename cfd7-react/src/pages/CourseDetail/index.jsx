@@ -1,9 +1,11 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import Detail from './components/detail'
 import Banner from './components/banner'
 import "./index.css"
+import Loading from "../../components/Loading"
 import Project from '../../components/Project'
 import { useRouteMatch,useParams } from 'react-router'
+import courseService from '../../services/courseServices'
 
 function CourseDetail() {
 
@@ -48,12 +50,24 @@ function CourseDetail() {
       img:"/img/img3.png"
     },
   ]
-  const {slug} =useParams()
-  console.log(slug)
+  let { slug } = useParams()
+    let [detail, setDetail] = useState();
+    console.log(`slug`, slug)
+    useEffect(async () => {
+        let data = await courseService.courseDetail(slug);
+        setDetail(data)
+    }, [slug])
+
+    if(!detail) return <Loading />
+    console.log(detail)
     return (
         <main className="course-detail" id="main">
-         <Banner/>
-          <Detail />
+         <Banner
+         data = {detail.data}
+         />
+          <Detail
+          data ={detail.data}
+          />
           <Project 
            data = {proMember}
            subtitle = "DỰ ÁN"

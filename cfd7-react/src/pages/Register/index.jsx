@@ -1,18 +1,26 @@
-import React from 'react'
+import React, { useState,useEffect } from 'react'
+import { useParams } from 'react-router'
+import Loading from '../../components/Loading/index.jsx';
+import courseService from '../../services/courseServices.js';
 import Form from './components/form.jsx'
 import NameRegis from './components/nameRegis.jsx'
 
 function Register() {
+  let [data,setData]=useState();
+  let {slug}= useParams();
+  useEffect(async () => {
+    let data = await courseService.courseDetail(slug);
+    setData(data);
+  }, [slug])
+  if(!data) return <Loading/>
+  console.log(`data`, data)
     return (
         <main className="register-course" id="main">
         <section>
           <div className="container">
             <div className="wrap container">
               <NameRegis 
-              name ="Thực Chiến Front-end Căn Bản"
-              date ="15/11/2020"
-              time ="18"
-              fee ="6.000.000"
+              register = {data.data}
               />
               <Form />
             </div>

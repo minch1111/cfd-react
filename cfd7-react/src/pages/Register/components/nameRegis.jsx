@@ -1,14 +1,14 @@
 import React from 'react'
 
-function NameRegis(props) {
+function NameRegis({register}) {
     return (
         <>
          <div className="main-sub-title">ĐĂNG KÝ</div>
-              <h1 className="main-title">{props.name} </h1>
+              <h1 className="main-title">{register.title} </h1>
               <div className="main-info">
-                <div className="date"><strong>Khai giảng:</strong> {props.date}</div>
-                <div className="time"><strong>Thời lượng:</strong> {props.time} buổi</div>
-                <div className="time"><strong>Học phí:</strong> {props.fee} VND</div>
+                <div className="date"><strong>Khai giảng:</strong> {register.opening_time}</div>
+                <div className="time"><strong>Thời lượng:</strong> {register.count_video} buổi</div>
+                <div className="time"><strong>Học phí:</strong> {register.money} VND</div>
               </div>   
         </>
     )

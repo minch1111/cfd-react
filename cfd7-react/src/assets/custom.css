@@ -2,3 +2,22 @@
     color: red;
     margin-left: 190px;
 }
+.nav ul li a.active{
+    background: #00afab;
+    transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+}
+.btn-register{
+    cursor: pointer;
+}
+.error-login{
+    color: red;
+    padding-left: 20px;
+}
+.loading{
+    height: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

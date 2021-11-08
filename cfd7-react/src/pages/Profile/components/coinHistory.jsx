@@ -83,6 +83,7 @@ function CoinHistory() {
       {
           coin.map((value,key)=>(
             <CoinHistoryItem 
+            key={key}
             coin={value.coin}
             date={value.date}
             content={value.content}

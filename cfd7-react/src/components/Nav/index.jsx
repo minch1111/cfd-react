@@ -17,8 +17,8 @@ export function Nav() {
             <a href="#">Đăng ký</a>
           </li>
 
-          <li className="active">
-            <NavLink to="/" onClick={showNav}>Trang chủ</NavLink>
+          <li>
+            <NavLink to="/" exact onClick={showNav}>Trang chủ</NavLink>
           </li>
           <li>
             <NavLink to="/team" onClick={showNav}>CFD Team</NavLink>
