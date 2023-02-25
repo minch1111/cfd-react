@@ -19,8 +19,8 @@ function Courses(props) {
             <div className="list row">
               {
 
-                  props.data?{...Array[9]}.map(()=>(<CourseItem loading={true} />)):
-                  props.data.map((value,key)=>(
+                  // props.data?{...Array[9]}.map(()=>(<CourseItem loading={true} />)):
+                  props.data?.map((value,key)=>(
                       <CourseItem 
                       key={key}
                       name ={value?.title}

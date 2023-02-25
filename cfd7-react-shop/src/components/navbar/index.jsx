@@ -1,13 +1,21 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 function Nav() {
+
+
+    const {listProduct} = useSelector(store=>store.cart)
+
+    let numCart = listProduct.length
+
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-white border-bottom">
                 <div className="container">
                     {/* Brand */}
-                    <a className="navbar-brand" href="./overview.html">
+                    <Link className="navbar-brand" to="/">
                         Shopper.
-                    </a>
+                    </Link>
                     {/* Toggler */}
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon" />
@@ -18,14 +26,14 @@ function Nav() {
                         <ul className="navbar-nav mx-auto">
                             <li className="nav-item dropdown">
                                 {/* Toggle */}
-                                <a className="nav-link" data-toggle="dropdown" href="#">Home</a>
+                                <Link className="nav-link" data-toggle="dropdown" to="/">Home</Link>
                                 {/* Menu */}
                                 <div className="dropdown-menu">
                                     <div className="card card-lg">
                                         <div className="card-body">
                                             <ul className="list-styled font-size-sm">
                                                 <li className="list-styled-item">
-                                                    <a className="list-styled-link" href="./index.html">Default</a>
+                                                    <Link className="list-styled-link" to="/">Default</Link>
                                                 </li>
                                                 <li className="list-styled-item">
                                                     <a className="list-styled-link" href="./index-classic.html">Classic</a>
@@ -92,31 +100,31 @@ function Nav() {
                                                                 {/* Links */}
                                                                 <ul className="list-styled mb-6 mb-md-0 font-size-sm">
                                                                     <li className="list-styled-item">
-                                                                        <a className="list-styled-link" href="./shop.html">All Clothing</a>
+                                                                        <Link className="list-styled-link" to="/shop">All Clothing</Link>
                                                                     </li>
                                                                     <li className="list-styled-item">
-                                                                        <a className="list-styled-link" href="./shop.html">Blouses &amp; Shirts</a>
+                                                                        <Link className="list-styled-link" to="/shop">Blouses &amp; Shirts</Link>
                                                                     </li>
                                                                     <li className="list-styled-item">
-                                                                        <a className="list-styled-link" href="./shop.html">Coats &amp; Jackets</a>
+                                                                        <Link className="list-styled-link" to="/shop">Coats &amp; Jackets</Link>
                                                                     </li>
                                                                     <li className="list-styled-item">
-                                                                        <a className="list-styled-link" href="./shop.html">Dresses</a>
+                                                                        <Link className="list-styled-link" to="/shop">Dresses</Link>
                                                                     </li>
                                                                     <li className="list-styled-item">
-                                                                        <a className="list-styled-link" href="./shop.html">Hoodies &amp; Sweats</a>
+                                                                        <Link className="list-styled-link" to="/shop">Hoodies &amp; Sweats</Link>
                                                                     </li>
                                                                     <li className="list-styled-item">
-                                                                        <a className="list-styled-link" href="./shop.html">Denim</a>
+                                                                        <Link className="list-styled-link" to="/shop">Denim</Link>
                                                                     </li>
                                                                     <li className="list-styled-item">
-                                                                        <a className="list-styled-link" href="./shop.html">Jeans</a>
+                                                                        <Link className="list-styled-link" to="/shop">Jeans</Link>
                                                                     </li>
                                                                     <li className="list-styled-item">
-                                                                        <a className="list-styled-link" href="./shop.html">Jumpers &amp; Cardigans</a>
+                                                                        <Link className="list-styled-link" to="/shop">Jumpers &amp; Cardigans</Link>
                                                                     </li>
                                                                     <li className="list-styled-item">
-                                                                        <a className="list-styled-link" href="./shop.html">Leggings</a>
+                                                                        <Link className="list-styled-link" to="/shop">Leggings</Link>
                                                                     </li>
                                                                 </ul>
                                                             </div>
@@ -126,28 +134,28 @@ function Nav() {
                                                                 {/* Links */}
                                                                 <ul className="list-styled mb-6 mb-md-0 font-size-sm">
                                                                     <li className="list-styled-item">
-                                                                        <a className="list-styled-link" href="./shop.html">All Shoes &amp; Boots</a>
+                                                                        <Link className="list-styled-link" to="/shop">All Shoes &amp; Boots</Link>
                                                                     </li>
                                                                     <li className="list-styled-item">
-                                                                        <a className="list-styled-link" href="./shop.html">Branded Shoes</a>
+                                                                        <Link className="list-styled-link" to="/shop">Branded Shoes</Link>
                                                                     </li>
                                                                     <li className="list-styled-item">
-                                                                        <a className="list-styled-link" href="./shop.html">Boots</a>
+                                                                        <Link className="list-styled-link" to="/shop">Boots</Link>
                                                                     </li>
                                                                     <li className="list-styled-item">
-                                                                        <a className="list-styled-link" href="./shop.html">Heels</a>
+                                                                        <Link className="list-styled-link" to="/shop">Heels</Link>
                                                                     </li>
                                                                     <li className="list-styled-item">
-                                                                        <a className="list-styled-link" href="./shop.html">Trainers</a>
+                                                                        <Link className="list-styled-link" to="/shop">Trainers</Link>
                                                                     </li>
                                                                     <li className="list-styled-item">
-                                                                        <a className="list-styled-link" href="./shop.html">Sandals</a>
+                                                                        <Link className="list-styled-link" to="/shop">Sandals</Link>
                                                                     </li>
                                                                     <li className="list-styled-item">
-                                                                        <a className="list-styled-link" href="./shop.html">Shoes</a>
+                                                                        <Link className="list-styled-link" to="/shop">Shoes</Link>
                                                                     </li>
                                                                     <li className="list-styled-item">
-                                                                        <a className="list-styled-link" href="./shop.html">Wide Fit Shoes</a>
+                                                                        <Link className="list-styled-link" to="/shop">Wide Fit Shoes</Link>
                                                                     </li>
                                                                 </ul>
                                                             </div>
@@ -157,31 +165,31 @@ function Nav() {
                                                                 {/* Links */}
                                                                 <ul className="list-styled mb-0 font-size-sm">
                                                                     <li className="list-styled-item">
-                                                                        <a className="list-styled-link" href="./shop.html">All Bags &amp; Accessories</a>
+                                                                        <Link className="list-styled-link" to="/shop">All Bags &amp; Accessories</Link>
                                                                     </li>
                                                                     <li className="list-styled-item">
-                                                                        <a className="list-styled-link" href="./shop.html">Accessories</a>
+                                                                        <Link className="list-styled-link" to="/shop">Accessories</Link>
                                                                     </li>
                                                                     <li className="list-styled-item">
-                                                                        <a className="list-styled-link" href="./shop.html">Bags &amp; Purses</a>
+                                                                        <Link className="list-styled-link" to="/shop">Bags &amp; Purses</Link>
                                                                     </li>
                                                                     <li className="list-styled-item">
-                                                                        <a className="list-styled-link" href="./shop.html">Luggage</a>
+                                                                        <Link className="list-styled-link" to="/shop">Luggage</Link>
                                                                     </li>
                                                                     <li className="list-styled-item">
-                                                                        <a className="list-styled-link" href="./shop.html">Belts</a>
+                                                                        <Link className="list-styled-link" to="/shop">Belts</Link>
                                                                     </li>
                                                                     <li className="list-styled-item">
-                                                                        <a className="list-styled-link" href="./shop.html">Hats</a>
+                                                                        <Link className="list-styled-link" to="/shop">Hats</Link>
                                                                     </li>
                                                                     <li className="list-styled-item">
-                                                                        <a className="list-styled-link" href="./shop.html">Hair Accessories</a>
+                                                                        <Link className="list-styled-link" to="/shop">Hair Accessories</Link>
                                                                     </li>
                                                                     <li className="list-styled-item">
-                                                                        <a className="list-styled-link" href="./shop.html">Jewellery</a>
+                                                                        <Link className="list-styled-link" to="/shop">Jewellery</Link>
                                                                     </li>
                                                                     <li className="list-styled-item">
-                                                                        <a className="list-styled-link" href="./shop.html">Travel Accessories</a>
+                                                                        <Link className="list-styled-link" to="/shop">Travel Accessories</Link>
                                                                     </li>
                                                                 </ul>
                                                             </div>
@@ -191,22 +199,22 @@ function Nav() {
                                                                 {/* Links */}
                                                                 <ul className="list-styled mb-0 font-size-sm">
                                                                     <li className="list-styled-item">
-                                                                        <a className="list-styled-link" href="./shop.html">All Collections</a>
+                                                                        <Link className="list-styled-link" to="/shop">All Collections</Link>
                                                                     </li>
                                                                     <li className="list-styled-item">
-                                                                        <a className="list-styled-link" href="./shop.html">Occasionwear</a>
+                                                                        <Link className="list-styled-link" to="/shop">Occasionwear</Link>
                                                                     </li>
                                                                     <li className="list-styled-item">
-                                                                        <a className="list-styled-link" href="./shop.html">Going Out</a>
+                                                                        <Link className="list-styled-link" to="/shop">Going Out</Link>
                                                                     </li>
                                                                     <li className="list-styled-item">
-                                                                        <a className="list-styled-link" href="./shop.html">Workwear</a>
+                                                                        <Link className="list-styled-link" to="/shop">Workwear</Link>
                                                                     </li>
                                                                     <li className="list-styled-item">
-                                                                        <a className="list-styled-link" href="./shop.html">Holiday Shop</a>
+                                                                        <Link className="list-styled-link" to="/shop">Holiday Shop</Link>
                                                                     </li>
                                                                     <li className="list-styled-item">
-                                                                        <a className="list-styled-link" href="./shop.html">Jean Fit Guide</a>
+                                                                        <Link className="list-styled-link" to="/shop">Jean Fit Guide</Link>
                                                                     </li>
                                                                 </ul>
                                                             </div>
@@ -218,9 +226,9 @@ function Nav() {
                                                                     {/* Overlay */}
                                                                     <div className="card-img-overlay bg-dark-0 bg-hover align-items-center">
                                                                         <div className="text-center">
-                                                                            <a className="btn btn-white stretched-link" href="./shop.html">
+                                                                            <Link className="btn btn-white stretched-link" to="/shop">
                                                                                 Shop Sweaters <i className="fe fe-arrow-right ml-2" />
-                                                                            </a>
+                                                                            </Link>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -247,19 +255,19 @@ function Nav() {
                                                     {/* Links */}
                                                     <ul className="list-styled mb-7 font-size-sm">
                                                         <li className="list-styled-item">
-                                                            <a className="list-styled-link" href="./shop.html">Default</a>
+                                                            <Link className="list-styled-link" to="/shop">Default</Link>
                                                         </li>
                                                         <li className="list-styled-item">
-                                                            <a className="list-styled-link" href="./shop-topbar.html">Topbar</a>
+                                                            <Link className="list-styled-link" to="/shop">Topbar</Link>
                                                         </li>
                                                         <li className="list-styled-item">
-                                                            <a className="list-styled-link" href="./shop-collapse.html">Collapse</a>
+                                                            <Link className="list-styled-link" to="/shop">Collapse</Link>
                                                         </li>
                                                         <li className="list-styled-item">
-                                                            <a className="list-styled-link" href="./shop-simple.html">Simple</a>
+                                                            <Link className="list-styled-link" to="/shop">Simple</Link>
                                                         </li>
                                                         <li className="list-styled-item">
-                                                            <a className="list-styled-link" href="./shop-masonry.html">Masonry</a>
+                                                            <Link className="list-styled-link" to="/shop">Masonry</Link>
                                                         </li>
                                                     </ul>
                                                     {/* Heading */}
@@ -289,16 +297,16 @@ function Nav() {
                                                     {/* Links */}
                                                     <ul className="list-styled mb-7 font-size-sm">
                                                         <li className="list-styled-item">
-                                                            <a className="list-styled-link" href="./shopping-cart.html">Shopping Cart</a>
+                                                            <Link className="list-styled-link" to="/shopping-cart">Shopping Cart</Link>
                                                         </li>
                                                         <li className="list-styled-item">
-                                                            <a className="list-styled-link" href="./checkout.html">Checkout</a>
+                                                            <Link className="list-styled-link" to="/shopping-cart/check-out">Checkout</Link>
                                                         </li>
                                                         <li className="list-styled-item">
-                                                            <a className="list-styled-link" href="./order-completed.html">Order Completed</a>
+                                                            <Link className="list-styled-link" to="/order-completed">Order Completed</Link>
                                                         </li>
                                                         <li className="list-styled-item">
-                                                            <a className="list-styled-link" href="./shipping-and-returns.html">Shipping &amp; Returns</a>
+                                                            <Link className="list-styled-link" to="/shipping-and-return">Shipping &amp; Returns</Link>
                                                         </li>
                                                     </ul>
                                                     {/* Heading */}
@@ -329,16 +337,16 @@ function Nav() {
                                                     {/* Links */}
                                                     <ul className="list-styled mb-7 font-size-sm">
                                                         <li className="list-styled-item">
-                                                            <a className="list-styled-link" href="./account-payment.html">Payment</a>
+                                                            <Link className="list-styled-link" to="./account">Payment</Link>
                                                         </li>
                                                         <li className="list-styled-item">
-                                                            <a className="list-styled-link" href="./account-payment-edit.html">Payment: New</a>
+                                                            <Link className="list-styled-link" to="./account">Payment: New</Link>
                                                         </li>
                                                         <li className="list-styled-item">
-                                                            <a className="list-styled-link" href="./account-payment-choose.html">Payment: Choose</a>
+                                                            <Link className="list-styled-link" to="./account">Payment: Choose</Link>
                                                         </li>
                                                         <li className="list-styled-item">
-                                                            <a className="list-styled-link" href="./auth.html">Auth</a>
+                                                            <Link className="list-styled-link" to="/login-and-register">Auth</Link>
                                                         </li>
                                                     </ul>
                                                     {/* Heading */}
@@ -396,19 +404,19 @@ function Nav() {
                                         <div className="card-body">
                                             <ul className="list-styled font-size-sm">
                                                 <li className="list-styled-item">
-                                                    <a className="list-styled-link" href="./about.html">About</a>
+                                                    <Link className="list-styled-link" to="/about-us">About</Link>
                                                 </li>
                                                 <li className="list-styled-item">
-                                                    <a className="list-styled-link" href="./contact-us.html">Contact Us</a>
+                                                    <Link className="list-styled-link" to="/contact-us">Contact Us</Link>
                                                 </li>
                                                 <li className="list-styled-item">
-                                                    <a className="list-styled-link" href="./store-locator.html">Store Locator</a>
+                                                    <Link className="list-styled-link" to="/contact-us/store-locator">Store Locator</Link>
                                                 </li>
                                                 <li className="list-styled-item">
-                                                    <a className="list-styled-link" href="./faq.html">FAQ</a>
+                                                    <Link className="list-styled-link" to="/faq">FAQ</Link>
                                                 </li>
                                                 <li className="list-styled-item">
-                                                    <a className="list-styled-link" href="./coming-soon.html">Coming Soon</a>
+                                                    <Link className="list-styled-link" to="/">Coming Soon</Link>
                                                 </li>
                                                 <li className="list-styled-item">
                                                     <a className="list-styled-link" href="./404.html">404</a>
@@ -420,17 +428,17 @@ function Nav() {
                             </li>
                             <li className="nav-item dropdown">
                                 {/* Toggle */}
-                                <a className="nav-link" data-toggle="dropdown" href="#">Blog</a>
+                                <Link className="nav-link" data-toggle="dropdown" to="/blog">Blog</Link>
                                 {/* Menu */}
                                 <div className="dropdown-menu">
                                     <div className="card card-lg">
                                         <div className="card-body">
                                             <ul className="list-styled font-size-sm">
                                                 <li className="list-styled-item">
-                                                    <a className="list-styled-link" href="./blog.html">Blog</a>
+                                                    <Link className="list-styled-link" to="/blog">Blog</Link>
                                                 </li>
                                                 <li className="list-styled-item">
-                                                    <a className="list-styled-link" href="./blog-post.html">Blog Post</a>
+                                                    <Link className="list-styled-link" to="/blog/blog-post">Blog Post</Link>
                                                 </li>
                                             </ul>
                                         </div>
@@ -449,18 +457,18 @@ function Nav() {
                                 </a>
                             </li>
                             <li className="nav-item ml-lg-n4">
-                                <a className="nav-link" href="./account-orders.html">
+                                <Link className="nav-link" to="/account">
                                     <i className="fe fe-user" />
-                                </a>
+                                </Link>
                             </li>
                             <li className="nav-item ml-lg-n4">
-                                <a className="nav-link" href="./account-wishlist.html">
+                                <Link className="nav-link" to="/account">
                                     <i className="fe fe-heart" />
-                                </a>
+                                </Link>
                             </li>
                             <li className="nav-item ml-lg-n4">
                                 <a className="nav-link" data-toggle="modal" href="#modalShoppingCart">
-                                    <span data-cart-items={2}>
+                                    <span data-cart-items={numCart}>
                                         <i className="fe fe-shopping-cart" />
                                     </span>
                                 </a>

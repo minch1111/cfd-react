@@ -1,13 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import AppProvider from './core/AppProvider';
+import store from './store';
 // import "./assets/css/stylelibs.min.css"
 // import "./assets/img/"
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <AppProvider store={store}>
+      <App />
+    </AppProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Header() {
     return (
@@ -20,18 +21,18 @@ function Header() {
                             <li className="nav-item dropdown">
                                 {/* Toggle */}
                                 <a className="nav-link dropdown-toggle" data-toggle="dropdown" href="#">
-                                    <img className="mb-1 mr-1" src="./img/flags/usa.svg" alt="..." /> United States
+                                    <img className="mb-1 mr-1" src="/img/flags/usa.svg" alt="..." /> United States
                                 </a>
                                 {/* Menu */}
                                 <div className="dropdown-menu minw-0">
                                     <a className="dropdown-item" href="#!">
-                                        <img className="mb-1 mr-2" src="./img/flags/usa.svg" alt="USA" />United States
+                                        <img className="mb-1 mr-2" src="/img/flags/usa.svg" alt="USA" />United States
                                     </a>
                                     <a className="dropdown-item" href="#!">
-                                        <img className="mb-1 mr-2" src="./img/flags/canada.svg" alt="Canada" />Canada
+                                        <img className="mb-1 mr-2" src="/img/flags/canada.svg" alt="Canada" />Canada
                                     </a>
                                     <a className="dropdown-item" href="#!">
-                                        <img className="mb-1 mr-2" src="./img/flags/germany.svg" alt="Germany" />Germany
+                                        <img className="mb-1 mr-2" src="/img/flags/germany.svg" alt="Germany" />Germany
                                     </a>
                                 </div>
                             </li>
@@ -58,13 +59,13 @@ function Header() {
                         {/* Nav */}
                         <ul className="nav navbar-nav mr-8">
                             <li className="nav-item">
-                                <a className="nav-link" href="./shipping-and-returns.html">Shipping</a>
+                                <Link className="nav-link" to="/shipping-and-return">Shipping</Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="./faq.html">FAQ</a>
+                                <Link className="nav-link" to="/faq">FAQ</Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="./contact-us.html">Contact</a>
+                                <Link className="nav-link" to="/contact-us">Contact</Link>
                             </li>
                         </ul>
                         {/* Nav */}

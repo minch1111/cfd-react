@@ -1,4 +1,5 @@
-import api from "../config/api";
+// import api from "../config/api";
+const  api = 'http://cfd-reactjs.herokuapp.com';
 
 export const apiServices = {
     callApi(url) {

@@ -23,7 +23,7 @@ import { createContext, useState } from "react";
 import LoginModal from "./components/LoginModal/index.jsx";
 import PrivateRoute from "./components/PrivateRoute/index.jsx";
 import authServices from "./services/authServices.js";
-import { useSelector } from "react-redux";
+import {  useSelector } from "react-redux";
 import store from "./store/index.js";
 
 export const Context = createContext();
