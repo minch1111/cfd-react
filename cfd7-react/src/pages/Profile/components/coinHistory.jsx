@@ -42,7 +42,7 @@ function CoinHistory() {
               <span className="checkmarkradio" />
             </label>
             <label className="checkcontainer">
-              Voucher Tiki 200k
+              Voucher Tiki 200kk
               <input type="radio" name="radio" />
               <span className="checkmarkradio" />
             </label>
@@ -82,7 +82,7 @@ function CoinHistory() {
       </div>
       {
           coin.map((value,key)=>(
-            <CoinHistoryItem 
+            <CoinHistoryItem
             key={key}
             coin={value.coin}
             date={value.date}
@@ -91,14 +91,14 @@ function CoinHistory() {
             />
           ))
         }
-     
+
     </div>
     </div>
 
 
 
-      
-      
+
+
     )
 }
 
